@@ -1,0 +1,122 @@
+.home-container {
+    text-align: center;
+    margin-top: 20px;
+    
+}
+.sl{
+    /* border: solid; */
+    width: auto;
+    height: 400px;
+}
+/* ✅ Slider box */
+.slider {
+ border: solid;
+    width: 250px;
+    height: 300px;
+    float: right;
+    position: relative ;
+    
+    overflow: hidden;
+    margin: 30px auto;
+    margin-right: 10px;
+    /* center me lane ke liye, agar side me rakhna hai to remove auto */
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ✅ Common slide styles */
+.slide {
+    
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    /* image properly fill ho */
+    background-position: center;
+    /* center crop */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation: fadeZoom 30s infinite;
+    /* har image ka animation */
+}
+
+/* ✅ Har slide ke delay alag */
+.slide-0 {
+    animation-delay: 0s;
+}
+
+.slide-1 {
+    animation-delay: 5s;
+}
+
+.slide-2 {
+    animation-delay:10s;
+}
+
+.slide-3 {
+    animation-delay: 15s;
+}
+
+.slide-4 {
+    animation-delay: 20s;
+}
+
+.slide-5 {
+    animation-delay: 25s;
+}
+
+/* ✅ Animation (zoom + fade) */
+@keyframes fadeZoom {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    5% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    20% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    25% {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+/* history.css */
+
+.history-container {
+    padding: 2rem;
+    background-color: #FEF3C7; /* Tailwind bg-yellow-50 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.history-container h2 {
+    font-size: 2rem; /* Tailwind text-3xl */
+    color: #B91C1C; /* Tailwind text-red-600 */
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    border-bottom: 4px solid #EF4444; /* Tailwind border-red-500 */
+    display: inline-block;
+}
+
+.history-container p {
+    max-width: 60rem; /* Tailwind max-w-4xl */
+    text-align: justify;
+    line-height: 1.8;
+    color: #374151; /* Tailwind text-gray-700 */
+    margin-bottom: 1rem;
+}

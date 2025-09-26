@@ -1,0 +1,37 @@
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.about-container img {
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+  border: 4px solid #dc2626; /* red */
+  width: 300px;
+  height: auto;
+}
+/* about.css */
+body {
+  background-image: url('/path-to-texture/linen.png'); /* You can use any subtle texture */
+  background-size: cover;
+  background-repeat: repeat;
+}
+/* about.css */
+.about-container {
+  display: flex;
+  flex-direction: column; /* mobile first */
+  gap: 2rem;
+  padding: 1.5rem;
+  align-items: center;
+  background-color: #fff9c4; /* हल्का पीला background */
+}
+
+/* Responsive for medium screens */
+@media (min-width: 768px) {
+  .about-container {
+    flex-direction: row;
+  }
+}
