@@ -1,6 +1,6 @@
 .footer-container {
-  background-color: #222;
-  color: #fff;
+  background-color: #f3e9e9;
+  color: #000000;
   padding: 30px 20px 15px 20px;
   font-family: sans-serif;
 }
@@ -15,7 +15,9 @@
   margin-bottom: 10px;
   color: #f8d03f; /* highlight color */
 }
-
+h4{
+  color:#000000;
+}
 .footer-content div p {
   margin: 2px 0;
   font-size: 14px;

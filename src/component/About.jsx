@@ -1,11 +1,11 @@
 import React from "react";
-import guruji from "../image/Nitish.jpg"; // अपनी फोटो import करो
+import guruji from "../image/Nitish.jpg"; 
 import './about.css';
 
 function About({ language }) {
   return (
     <div className="about-container flex flex-col md:flex-row items-center gap-8 p-6">
-      {/* Left Image */}
+     
       <div className="w-full md:w-1/2 flex justify-center">
         <img
           src={guruji}
@@ -24,7 +24,7 @@ function About({ language }) {
             ? "Acharya Pt. Nitish Ji Shrama"
             : "आचार्य पं नितीश जी शर्मा"}
         </h3>
-        <h6>Phone: +91 9179592151</h6>
+        <h6>Phone: +91 77250 37722</h6>
         <p className="mb-4 leading-relaxed">
           {language === "en"
             ? "Acharya Ji’s purpose is to guide devotees in Maa Baglamukhi worship, rituals, and the deep knowledge of Vedas and Puranas. Through his experience and devotion, he has helped many solve their life problems."

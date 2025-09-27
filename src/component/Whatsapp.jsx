@@ -7,7 +7,7 @@ function Whatsapp() {
     <div className="floating-buttons">
       {/* WhatsApp */}
       <a
-        href="https://wa.me/919179592151"
+        href="https://wa.me/917725037722"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp"
@@ -16,7 +16,7 @@ function Whatsapp() {
       </a>
 
       {/* Call */}
-      <a href="tel:+919179592151" className="call">
+      <a href="tel:+91725037722" className="call">
         <FaPhoneAlt />
       </a>
 

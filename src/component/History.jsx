@@ -1,6 +1,7 @@
 import React from "react";
 
 function History({ language }) {
+  
   return (
     <div className="history-container" >
       <h2 className="">

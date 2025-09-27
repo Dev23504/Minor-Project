@@ -17,21 +17,21 @@ function App() {
 
   return (
     <>
-    <Router>
-      <Bg />
-       <Whatsapp/>
-        
-      <Navbar language={language} setLanguage={setLanguage} /> {/* ✅ pass props */}
-      <Routes>
-        <Route path="/" element={<Home language={language} />} />
-        <Route path="/about" element={<About language={language} />} />
-        <Route path="/service" element={<Services language={language} />} />
-        <Route path="/gallery" element={<Gallery language={language} />} />
-        <Route path="/contact" element={<Contact language={language} />} />
-        <Route path="/book-havan" element={<Book language={language} />} />
-      </Routes>
-    </Router>
-    <Footer language={language} />
+      <Router>
+        <Bg />
+        <Whatsapp />
+
+        <Navbar language={language} setLanguage={setLanguage} /> {/* ✅ pass props */}
+        <Routes>
+          <Route path="/" element={<Home language={language} />} />
+          <Route path="/about" element={<About language={language} />} />
+          <Route path="/service" element={<Services language={language} />} />
+          <Route path="/gallery" element={<Gallery language={language} />} />
+          <Route path="/contact" element={<Contact language={language} />} />
+          <Route path="/book-havan" element={<Book language={language} />} />
+        </Routes>
+      </Router>
+      <Footer language={language} />
     </>
   );
 }

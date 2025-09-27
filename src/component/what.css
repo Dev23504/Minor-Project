@@ -24,3 +24,31 @@
 .floating-buttons a.whatsapp { background-color: #25d366; }
 .floating-buttons a.call { background-color: #007bff; }
 .floating-buttons a.instagram { background-color: #C13584; }
+
+.floating-button {
+  /* position: fixed; */
+  left: 20px;
+  bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  z-index: 1000;
+  justify-content: center;
+}
+.floating-button a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  margin-top: 20px;
+}
+
+.floating-button a.whats { background-color: #03ff5f; }
+.floating-button a.calling { background-color: #007bff; }
+.floating-button a.insta { background-color: #ff0e97; }
