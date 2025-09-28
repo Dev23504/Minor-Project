@@ -26,7 +26,7 @@ function Book({ language }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://minor-backend-2.onrender.com/api/book-havan", formData);
+      await axios.post("https://baglamukhi-havanbook.onrender.com/api/book-havan", formData);
       alert(language === "en"
         ? `Thank you ${formData.name}, your Havan has been booked!`
         : `धन्यवाद ${formData.name}, आपका हवन बुकिंग हो गया है!`);
