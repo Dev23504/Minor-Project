@@ -26,15 +26,25 @@ function Book({ language }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://baglamukhi-havanbook.onrender.com/api/book-havan", formData);
-      alert(language === "en"
-        ? `Thank you ${formData.name}, your Havan has been booked!`
-        : `धन्यवाद ${formData.name}, आपका हवन बुकिंग हो गया है!`);
+      // ✅ Corrected URL and added language field
+      await axios.post("https://minor-backend-3.onrender.com/api/book-havan", {
+        ...formData,
+        language: language || "hi", // default Hindi if not passed
+      });
+
+      alert(
+        language === "en"
+          ? `Thank you ${formData.name}, your Havan has been booked!`
+          : `धन्यवाद ${formData.name}, आपका हवन बुकिंग हो गया है!`
+      );
+
       setFormData({ name: "", phone: "", havanType: "", message: "" });
     } catch (err) {
-      alert(language === "en"
-        ? "Error booking Havan. Please try again."
-        : "हवन बुकिंग में त्रुटि हुई। कृपया पुनः प्रयास करें।");
+      alert(
+        language === "en"
+          ? "Error booking Havan. Please try again."
+          : "हवन बुकिंग में त्रुटि हुई। कृपया पुनः प्रयास करें।"
+      );
       console.error(err);
     }
   };
@@ -46,7 +56,7 @@ function Book({ language }) {
       phone: "आपका फ़ोन नंबर",
       havanType: "हवन का प्रकार चुनें",
       message: "संदेश (यदि कोई)",
-      button: "हवन बुक करें"
+      button: "हवन बुक करें",
     },
     en: {
       title: "Book Havan Online",
@@ -54,8 +64,8 @@ function Book({ language }) {
       phone: "Your Phone",
       havanType: "Select Havan Type",
       message: "Your Message (optional)",
-      button: "Book Havan"
-    }
+      button: "Book Havan",
+    },
   };
 
   const selected = language === "en" ? content.en : content.hi;
@@ -88,7 +98,9 @@ function Book({ language }) {
         >
           <option value="">{selected.havanType}</option>
           {havanOptions.map((type, idx) => (
-            <option key={idx} value={type}>{type}</option>
+            <option key={idx} value={type}>
+              {type}
+            </option>
           ))}
         </select>
         <textarea

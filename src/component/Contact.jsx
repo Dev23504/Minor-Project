@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import './contact.css'
+import "./contact.css";
+
 function Contact({ language }) {
   const [formData, setFormData] = useState({
     name: "",
@@ -16,23 +17,33 @@ function Contact({ language }) {
     e.preventDefault();
 
     try {
-      const res = await fetch("https://baglamukhi-havanbook.onrender.com/api/contact", {
+      const res = await fetch("https://minor-backend-3.onrender.com/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          language: language || "hi", // ✅ added this line
+        }),
       });
 
       const data = await res.json();
-      alert(data.message); // backend से response दिखाएगा
-      setFormData({ name: "", email: "", message: "" });
 
+      if (res.ok) {
+        alert(data.message || (language === "en"
+          ? "Message sent successfully!"
+          : "संदेश सफलतापूर्वक भेजा गया!"));
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        alert(data.error || (language === "en"
+          ? "Failed to send message."
+          : "संदेश भेजने में समस्या हुई।"));
+      }
     } catch (err) {
-      console.error(err);
+      console.error("Contact form error:", err);
       alert(language === "en" ? "Failed to send" : "संदेश भेजने में समस्या");
     }
   };
 
-  // Language content
   const content = {
     hi: {
       title: "संपर्क करें",
