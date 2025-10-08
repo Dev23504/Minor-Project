@@ -17,7 +17,7 @@ function Contact({ language }) {
     e.preventDefault();
 
     try {
-      const res = await fetch("https://minor-backend-3.onrender.com/api/contact", {
+      const res = await fetch("https://localhostapi/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
