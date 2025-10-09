@@ -17,26 +17,33 @@ function Contact({ language }) {
     e.preventDefault();
 
     try {
-      const res = await fetch("https://localhostapi/contact", {
+      // 🔹 Local backend URL
+      const res = await fetch("http://localhost:5000/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
-          language: language || "hi", // ✅ added this line
+          language: language || "hi",
         }),
       });
 
       const data = await res.json();
 
       if (res.ok) {
-        alert(data.message || (language === "en"
-          ? "Message sent successfully!"
-          : "संदेश सफलतापूर्वक भेजा गया!"));
+        alert(
+          data.message ||
+          (language === "en"
+            ? "Message sent successfully!"
+            : "संदेश सफलतापूर्वक भेजा गया!")
+        );
         setFormData({ name: "", email: "", message: "" });
       } else {
-        alert(data.error || (language === "en"
-          ? "Failed to send message."
-          : "संदेश भेजने में समस्या हुई।"));
+        alert(
+          data.error ||
+          (language === "en"
+            ? "Failed to send message."
+            : "संदेश भेजने में समस्या हुई।")
+        );
       }
     } catch (err) {
       console.error("Contact form error:", err);

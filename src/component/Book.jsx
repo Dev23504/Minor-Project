@@ -27,7 +27,7 @@ function Book({ language }) {
     e.preventDefault();
     try {
       // ✅ Corrected URL and added language field
-      await axios.post("https://minor-backend-3.onrender.com/api/book-havan", {
+      await axios.post("http://localhost:5000/api/book-havan", {
         ...formData,
         language: language || "hi", // default Hindi if not passed
       });
