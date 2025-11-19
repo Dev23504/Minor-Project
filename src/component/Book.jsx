@@ -26,10 +26,10 @@ function Book({ language }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // ✅ Corrected URL and added language field
-      await axios.post("http://localhost:5000/api/book-havan", {
+      // ✅ Render Backend URL
+      await axios.post("https://minor-project-xfl2.onrender.com/api/book-havan", {
         ...formData,
-        language: language || "hi", // default Hindi if not passed
+        language: language || "hi",
       });
 
       alert(

@@ -13,7 +13,7 @@ import Footer from './component/Footer.jsx';
 
 
 function App() {
-  const [language, setLanguage] = useState('en'); // ✅ global language state
+  const [language, setLanguage] = useState('en'); 
 
   return (
     <>
@@ -21,7 +21,7 @@ function App() {
         <Bg />
         <Whatsapp />
 
-        <Navbar language={language} setLanguage={setLanguage} /> {/* ✅ pass props */}
+        <Navbar language={language} setLanguage={setLanguage} />
         <Routes>
           <Route path="/" element={<Home language={language} />} />
           <Route path="/about" element={<About language={language} />} />

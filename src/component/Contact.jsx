@@ -17,37 +17,43 @@ function Contact({ language }) {
     e.preventDefault();
 
     try {
-      // 🔹 Local backend URL
-      const res = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...formData,
-          language: language || "hi",
-        }),
-      });
+      const res = await fetch(
+        "https://minor-project-xfl2.onrender.com/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...formData,
+            language: language || "hi",
+          }),
+        }
+      );
 
       const data = await res.json();
 
       if (res.ok) {
         alert(
           data.message ||
-          (language === "en"
-            ? "Message sent successfully!"
-            : "संदेश सफलतापूर्वक भेजा गया!")
+            (language === "en"
+              ? "Message sent successfully!"
+              : "संदेश सफलतापूर्वक भेजा गया!")
         );
         setFormData({ name: "", email: "", message: "" });
       } else {
         alert(
           data.error ||
-          (language === "en"
-            ? "Failed to send message."
-            : "संदेश भेजने में समस्या हुई।")
+            (language === "en"
+              ? "Failed to send message."
+              : "संदेश भेजने में समस्या हुई।")
         );
       }
     } catch (err) {
       console.error("Contact form error:", err);
-      alert(language === "en" ? "Failed to send" : "संदेश भेजने में समस्या");
+      alert(
+        language === "en" ? "Failed to send" : "संदेश भेजने में समस्या हुई"
+      );
     }
   };
 
@@ -82,6 +88,7 @@ function Contact({ language }) {
           onChange={handleChange}
           required
         />
+
         <input
           type="email"
           name="email"
@@ -90,6 +97,7 @@ function Contact({ language }) {
           onChange={handleChange}
           required
         />
+
         <textarea
           name="message"
           placeholder={selected.message}
@@ -97,6 +105,7 @@ function Contact({ language }) {
           onChange={handleChange}
           required
         />
+
         <button type="submit">{selected.button}</button>
       </form>
     </div>
